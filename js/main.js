@@ -8549,10 +8549,12 @@ function renderLocations(game, darkTheme) {
 						'<div class="item" data-value="missed"><i class="ban icon"></i>Missed</div>' +
 						'<div class="item" data-value="missed-p1"><i class="ban icon"></i>Missed (P1)</div>' +
 						'<div class="item" data-value="missed-p2"><i class="ban icon"></i>Missed (P2)</div>' +
+						'<div class="item" data-value="missed-p3"><i class="ban icon"></i>Missed (P3)</div>' +
 						'<div class="item" data-value="stored"><i class="hdd outline icon"></i>Stored</div>' +
 						'<div class="item" data-value="deceased"><i class="remove user icon"></i>Deceased</div>' +
 						'<div class="item" data-value="deceased-p1"><i class="remove user icon"></i>Deceased (P1)</div>' +
 						'<div class="item" data-value="deceased-p2"><i class="remove user icon"></i>Deceased (P2)</div>' +
+						'<div class="item" data-value="deceased-p3"><i class="remove user icon"></i>Deceased (P3)</div>' +
 					'</div>' +
 				'</div>' +
 			'</td>' +
