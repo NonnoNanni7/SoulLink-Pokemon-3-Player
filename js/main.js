@@ -8653,7 +8653,7 @@ function populateLocation(game, data) {
 	var id = game + data.id;
 	var encounterElm = $('#' + id + '-encounter');
 	var encounterElm2 = $('#' + id + '-encounter2');
-	var encounterElm2 = $('#' + id + '-encounter3');
+	var encounterElm3 = $('#' + id + '-encounter3');
 	var nicknameElm = $('#' + id + '-nickname');
 	var statusElm = $('#' + id + '-status');
 
@@ -8682,16 +8682,15 @@ function populateLocation(game, data) {
 		localStorage.removeItem(id + '-encounter2');
 		localStorage.removeItem(id + '-name2');
 	}
-
 	if (data.encounter3 !== null && data.encounter3 !== '') {
-		encounterElm2.dropdown('set value', data.encounter3);
-		encounterElm2.dropdown('set text', '<img class="pkmn" src="img/' + data.encounter3 + '">' + data.name3);
-		encounterElm2.data('name', data.name3);
+		encounterElm3.dropdown('set value', data.encounter3);
+		encounterElm3.dropdown('set text', '<img class="pkmn" src="img/' + data.encounter3 + '">' + data.name3);
+		encounterElm3.data('name', data.name3);
 		localStorage.setItem(id + '-encounter3', data.encounter3);
 		localStorage.setItem(id + '-name3', data.name3);
 	} else {
-		encounterElm2.closest('td').data('sortValue', '');
-		encounterElm2.dropdown('clear');
+		encounterElm3.closest('td').data('sortValue', '');
+		encounterElm3.dropdown('clear');
 		localStorage.removeItem(id + '-encounter3');
 		localStorage.removeItem(id + '-name3');
 	}
@@ -8844,8 +8843,6 @@ function initTab(tab) {
 			elm.data('name', name);
 			if(elm.prop('id').endsWith('2')) {
 				localStorage.setItem(elm.prop('id').slice(0, -10) + 'name2', regex.exec(name));
-			}if(elm.prop('id').endsWith('3')) {
-				localStorage.setItem(elm.prop('id').slice(0, -10) + 'name3', regex.exec(name));
 			} else {
 				localStorage.setItem(elm.prop('id').slice(0, -9) + 'name', regex.exec(name));
 			}
@@ -8919,8 +8916,8 @@ function saveData(game) {
 		var nickname = localStorage.getItem(game + location.value + '-nickname');
 		var status = localStorage.getItem(game + location.value + '-status');
 
-		if (encounter !== null || encounter2 !== null || encounter3 !== null || name !== null || name2 !== null || name3 !== null|| nickname !== null || status !== null) {
-			blobData.locations.push({'id': location.value, 'encounter': encounter, 'encounter2': encounter2,'encounter3': encounter3, 'name': name, 'name2': name2, 'name3': name3,'nickname': nickname, 'status': status});
+		if (encounter !== null || encounter2 !== null || encounter3 !== null ||name !== null || name2 !== null || name3 !== null ||  nickname !== null || status !== null) {
+			blobData.locations.push({'id': location.value, 'encounter': encounter, 'encounter2': encounter2,'encounter3': encounter3, 'name': name, 'name2': name2,'name3': name3, 'nickname': nickname, 'status': status});
 		}
 	});
 
